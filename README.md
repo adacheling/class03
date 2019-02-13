@@ -143,6 +143,15 @@ If the evaluation of an expression influences subsequent computation
 in some other way besides returning a value, this is called a *side
 effect*.
 
+Examples of side effects include
+
+* modifying the value of a variable (assignment)
+* writing to a file on disk
+* sending a package to the network
+* printing to standard output
+* more generally, any system call that effects the state of the
+  environment.
+  
 *Imperative languages* include expressions that have side effects
 (e.g. assignments `x = 2 + 1`). Expressions whose sole purpose is
 their side effect and whose result value does not matter are called
@@ -198,8 +207,8 @@ The value model can be summarized as follows:
 For example, C and C++ use the value model and so does Scala:
 
 ```scala
-var a = 0;
-a = a + 1;
+var a = 0
+a = a + 1
 ```
 
 Here, the occurrence of `a` on the left side of `=` is an l-value
@@ -213,7 +222,8 @@ The reference model can be summarized as follows:
 
 * Every variable is an l-value.
 
-* To get the value at the named location, the variable must be *dereferenced*.
+* To get the value at the named location, the variable must be
+  explicitly *dereferenced*.
 
 For example, OCaml uses the reference model for mutable variables:
 
@@ -308,7 +318,7 @@ The `else` branch of conditional statements can be omitted in most languages.
 
 #### Statement Grouping
 
-* Pascal introduces `begin`-`end` pairs to group a sequence of
+* Pascal introduced `begin`-`end` pairs to group a sequence of
   statements in a block that can be viewed again as a single statement.
 
 * C, C++, Java, Scala... abbreviate the `begin`-`end` pairs to `{ }`.
@@ -490,9 +500,9 @@ Note that this code is equivalent to the following, more elaborate, C code:
 void send(int* to, int* from, int count) {
   do {
   *to = *from;
-  to++;
-  from++;
-  count--;
+  to = to + 1;
+  from = from + 1;
+  count = count - 1;
   while (count > 0);
 }
 ```
