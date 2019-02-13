@@ -1,6 +1,6 @@
 # Class 3
 
-See also the Scala intro in the class notes of [Class 2](https://github.com/nyu-pl-fa18/class02).
+See also the Scala intro in the [Scala setup instructions](https://github.com/nyu-pl-sp19/scala-setup).
 
 ## Control Flow
 
