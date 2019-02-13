@@ -341,12 +341,12 @@ The `else` branch of conditional statements can be omitted in most languages.
 Consider the following Scala code:
 
 ```scala
-if (x / y > 5) z = 6;
+if (x / y > 5) z = 6
 ```
 What if `y == 0`? We can test for `0` before doing the division:
 
 ```scala
-if (y != 0 && x / y > 5) z = 6;
+if (y != 0 && x / y > 5) z = 6
 ```
 
 But don't binary operators like `&&` normally evaluate both operands?
