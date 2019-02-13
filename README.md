@@ -377,12 +377,12 @@ Here is how we would write a choice statement in Ada:
 
 ```ada
 case Next_Char is
-  when 'I'    => Val := 1;
-  when 'V'    => Val := 5;
-  when 'X'    => Val := 10;
-  when 'C'    => Val := 100;
-  when 'D'    => Val := 500;
-  when 'M'    => Val := 1000;
+  when 'I' => Val := 1;
+  when 'V' => Val := 5;
+  when 'X' => Val := 10;
+  when 'C' => Val := 100;
+  when 'D' => Val := 500;
+  when 'M' => Val := 1000;
   when others => raise Illegal_Numeral;
 end case;
 ```
@@ -397,7 +397,7 @@ nextChar match {
   case 'C' => val = 100;
   case 'D' => val = 500;
   case 'M' => Val = 1000;
-  case   _ => raise Illegal_Numeral;
+  case _ => throw Illegal_Numeral
 }
 ```
 
@@ -405,14 +405,14 @@ Since Scala does not distinguish expressions and statements syntactically, we ca
 also write the above code as follows:
 
 ```scala
-val = nextChar match {
+val nextChar = match {
   case 'I' => 1
   case 'V' => 5
   case 'X' => 10
   case 'C' => 100
   case 'D' => 500
   case 'M' => 1000
-  case _ => raise Illegal_Numeral;
+  case _ => throw Illegal_Numeral
 }
 ```
 
